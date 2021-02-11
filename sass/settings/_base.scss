@@ -1,0 +1,48 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0efef;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(101, 88, 129);
+    transition: 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: lighten($color: rgb(101, 88, 129), $amount: 15%);
+}
+
+body {
+    min-height: 100vh;
+    font-family: $main-font;
+    color: $main-font-color;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+}
+
+.fa-chevron-circle-down {
+    font-size: 1.2rem;
+}
+
+input {
+    border-radius: 10px;
+    border: none;
+    padding: 7px;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @content;
+}
