@@ -1,6 +1,13 @@
 import '../sass/main.scss';
-import gallery from './gallery';
+import galleryData from './galleryData';
+import searchPhoto from './searchPhoto';
+import loadMore from './loadMore';
+import searchValuesArr from './searchDataContainer';
+import filtersListHTML from './DOM/FiltersListHTML';
 
-const API_KEY = "20203630-3abf7923cd809498a39669ead";
+document.addEventListener('DOMContentLoaded', filtersListHTML);
+galleryData(searchValuesArr);
+searchPhoto();
+loadMore();
 
-gallery(API_KEY);
+

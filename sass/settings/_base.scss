@@ -40,6 +40,23 @@ input {
     padding: 7px;
 }
 
+button{
+    border: none;
+    background-color: $header-bcg;
+    color: $main-font-color;
+    padding: 10px 20px;
+    border-radius: 7px;
+    font-size: 1.3rem;
+    transition: 0.2s;
+    &:hover{
+        background-color: lighten($color: $header-bcg, $amount: 10%);
+    }
+}
+
+.fas{
+    pointer-events: none;
+}
+
 @mixin flex-center {
     display: flex;
     justify-content: center;
