@@ -45,6 +45,10 @@
         justify-content: space-between;
     }
 
+    &__list-item{
+        cursor: pointer;
+    }
+
     &__category-list{
         position: absolute;
         top: calc(100% + 10px);
@@ -115,7 +119,6 @@
     text-align: center;
     margin-bottom: 30px;
 }
-
 
 .footer {
     height: 70px;

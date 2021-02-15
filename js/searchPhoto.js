@@ -10,8 +10,8 @@ const searchPhoto = () => {
                 e.preventDefault();
                 const searchValue = searchInput.value;
 
-                searchValuesArr.searchQ = searchValue;
-                searchValuesArr.numberOfPages = 2;
+                searchValuesArr.searchQ = `&q=${searchValue}`;
+                searchValuesArr.numberOfPages = `&page=2`;
                 galleryData(searchValuesArr);
 
                 galleryContainer.innerHTML = '';

@@ -3,9 +3,9 @@ import searchDataContainer from './searchDataContainer';
 
 const loadMore = () => {
     const button = document.querySelector('.load-more__btn');
-
+    let page = 3;
     button.addEventListener('click', () => {
-        searchDataContainer.numberOfPages++;
+        searchDataContainer.numberOfPages = `&page=${page++}`;
         galleryData(searchDataContainer);
     })
 }

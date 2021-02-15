@@ -3,8 +3,9 @@ const dropdownFilters = () => {
    
     allfiltersList.forEach(list => {
         list.addEventListener('click', e => {
-            const allList = e.target.children[1];
-            allList.classList.toggle('filters__category-list--is-open');
+            const menu = e.target.children[1];
+            if(!menu) return;
+            menu.classList.toggle('filters__category-list--is-open');
         })
     });
 }
