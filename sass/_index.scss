@@ -1,4 +1,4 @@
-.wrapper{
+.wrapper {
     margin: 0 auto;
     max-width: 1200px;
 }
@@ -12,7 +12,7 @@
     font-size: 1.5rem;
 }
 
-.header__container{
+.header__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,9 +24,10 @@
     font-size: 2.2rem;
 }
 
-.search{
+.search {
     position: relative;
-    &__icon{
+
+    &__icon {
         font-weight: 300;
         color: rgba(177, 177, 177, 0.3);
         position: absolute;
@@ -40,26 +41,26 @@
     position: relative;
     width: 55%;
 
-    &__list{
+    &__list {
         display: flex;
         justify-content: space-between;
     }
 
-    &__list-item{
+    &__list-item {
         cursor: pointer;
     }
 
-    &__category-list{
+    &__category-list {
         position: absolute;
         top: calc(100% + 10px);
         min-width: 110px;
         background-color: rgb(207, 196, 44);
 
-        &--is-open{
+        &--is-open {
             display: none;
         }
 
-        &-item{
+        &-item {
             font-size: 1.2rem;
             padding: 7px 15px;
         }
@@ -72,12 +73,37 @@
     gap: 10px;
     margin: 100px 15px 30px 15px;
     align-items: center;
-   
-    &__item{
+    min-height: calc(100vh - 100px);
+
+    &--change-display{
+        display: flex;
+        height: calc(100vh - 100px);
+        margin: 0;
+        padding-top: 70px;
+    }
+
+    &__not-found {
+        width: 100%;
+        text-align: center;
+        color: black;
+
+        &__main-text {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        &__text {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+    }
+
+    &__item {
         position: relative;
         overflow: hidden;
         border-radius: 10px;
-        &-data{
+
+        &-data {
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -87,40 +113,47 @@
             height: 20%;
             bottom: 0;
 
-            .author{
+            .author {
                 color: white;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                &__img{
+
+                &__img {
                     border-radius: 50%;
                     width: 25px;
                     height: 25px;
                 }
-                &__name{
+
+                &__name {
                     font-size: 1rem;
                     margin-left: 10px;
                 }
             }
 
-            .download-btn{
+            .download-btn {
                 justify-self: flex-end;
             }
         }
 
-        &-img{
+        &-img {
             width: 100%;
             object-fit: contain;
         }
     }
 }
 
-.load-more{
+.load-more {
     text-align: center;
     margin-bottom: 30px;
 }
 
 .footer {
     height: 70px;
+    width: 100%;
     background-color: $footer-bcg;
+    &__not-found{
+        position: absolute;
+        bottom:0;
+    }
 }

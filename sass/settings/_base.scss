@@ -17,6 +17,7 @@
 
 body {
     min-height: 100vh;
+    overflow-x: hidden;
     font-family: $main-font;
     color: $main-font-color;
 }
@@ -55,6 +56,10 @@ button{
 
 .fas{
     pointer-events: none;
+}
+
+.hide{
+    display: none;
 }
 
 @mixin flex-center {
