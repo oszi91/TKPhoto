@@ -1,6 +1,5 @@
 import API from './API';
 import showGalleryResults from './showGalleryResults';
-import notFound from './notFound';
 
 const galleryData = async (searchDataContainer) => {
     const {
@@ -10,16 +9,24 @@ const galleryData = async (searchDataContainer) => {
         orientation,
         category,
         colors,
-        order
+        order,
+        size
     } = searchDataContainer;
-    const searchData = `${API}${numberOfPages}${searchQ}${type}${orientation}${category}${colors.join('')}${order}`;
+    const searchData = `${API}${numberOfPages}${searchQ}${type}${orientation}${category}${colors.join('')}${order}${size.join('')}`;
 
-    const resp = await fetch(searchData);
-    console.log(resp);
-    const data = await resp.json();
-    const gallery = data.hits;
-
-    showGalleryResults(gallery);
+    try {
+        const resp = await fetch(searchData);
+        console.log(resp);
+        if (resp.ok) {
+            const data = await resp.json();
+            const gallery = data.hits;
+            showGalleryResults(gallery);
+        } else {
+            throw new Error(`Http error: ${resp.status}`);
+        }
+    } catch (err) {
+        console.error(err);
+    }
 };
 
 export default galleryData;

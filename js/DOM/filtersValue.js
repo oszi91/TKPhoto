@@ -1,22 +1,23 @@
 import searchDataContainer from './../searchDataContainer';
 import galleryFiltersUpdate from './galleryFiltersUpdate';
+import sizeFiltersSearch from './sizeFiltersSearch';
 
 const filtersValue = () => {
     const filtersCategoryList = document.querySelectorAll('.filters__category-list');
- 
-    filtersCategoryList.forEach(listVal => {
+    sizeFiltersSearch();
 
+    filtersCategoryList.forEach(listVal => {
         const selectFilter = (e) => {
             const filterCategory = e.target.parentNode.dataset.filtersListValue;
             const filterValue = e.target.dataset.filterValue;
-            const closeMenu =  e.target.parentNode.classList.add('filters__category-list--is-open');
+            const closeMenu = e.target.parentNode;
 
             const typeVal = `&image_type=${filterValue}`;
             const orientationVal = `&orientation=${filterValue}`;
             const categoryVal = `&category=${filterValue}`;
             const colorsVal = `&colors=${filterValue}`;
             const orderVal = `&order=${filterValue === `editor's choice` ? 'ec' : filterValue}`;
-
+           
             switch (filterCategory) {
                 case 'type':
                     searchDataContainer.type = typeVal;

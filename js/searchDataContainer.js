@@ -1,11 +1,12 @@
 let searchDataContainer = {
-    searchQ: '',
+    searchQ: '' || '&q=beach',
     numberOfPages: '',
     type: '',
     orientation: '',
     category: '',
     colors: [],
-    order: ''
+    order: '',
+    size: []
 };
 
 export default searchDataContainer;

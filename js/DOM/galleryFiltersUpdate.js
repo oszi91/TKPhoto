@@ -5,7 +5,7 @@ const galleryFiltersUpdate = (closeMenu) => {
     const galleryContainer = document.querySelector('.gallery');
     galleryContainer.innerHTML = '';
     galleryData(searchDataContainer);
-    closeMenu;
+    closeMenu.classList.add('filters__category-list--is-open');
 }
 
 export default galleryFiltersUpdate;

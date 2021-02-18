@@ -1,0 +1,73 @@
+.footer {
+    width: 100%;
+    background: $footer-bcg;
+    height: 200px;
+
+    &__container {
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__not-found {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .about-me {
+        &__contact {
+            color: $main-font-color;
+            font-size: 2.5rem;
+            border-bottom: 1px solid $main-font-color;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        &__data {
+            margin: 10px 0;
+
+            &__link {
+                font-size: 1.2rem;
+                transition: .2s;
+
+                &:hover {
+                    color: darken($color: $main-font-color, $amount: 8%);
+                }
+            }
+        }
+
+        .fas,
+        .fab {
+            font-size: 1rem;
+            background-color: black;
+            border-radius: 50%;
+            padding: 5px;
+        }
+    }
+
+    .pixabay {
+        &__text {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        &__link {
+            display: block;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            width: 150px;
+            margin: 0 auto;
+            transition: .2s;
+
+            &:hover {
+                background-color: darken($color: white, $amount: 3%)
+            }
+        }
+
+        &__logo {
+            width: 100%;
+        }
+    }
+}

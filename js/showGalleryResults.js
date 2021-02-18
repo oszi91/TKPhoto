@@ -6,7 +6,7 @@ const showGalleryResults = (results) => {
     const footer = document.querySelector('.footer');
 
     if (results.length === 0) {
-        notFound();
+        notFound(galleryContainer,loadMoreBtn,footer);
     } else if (results.length < 20) {
         loadMoreBtn.classList.add('hide');
     } else if (galleryContainer.classList.contains('gallery--change-display')) {
