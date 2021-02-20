@@ -1,9 +1,9 @@
 import galleryData from './galleryData';
 import searchValuesArr from './searchDataContainer';
+import clearGallery from './clearGallery';
 
 const searchPhoto = () => {
         const form = document.querySelector('.search-form');
-        const galleryContainer = document.querySelector('.gallery');
         const searchInput = document.querySelector('.search-form__input');
         
         const searchHandle = (e) => {
@@ -14,7 +14,7 @@ const searchPhoto = () => {
                 searchValuesArr.numberOfPages = `&page=2`;
                 galleryData(searchValuesArr);
 
-                galleryContainer.innerHTML = '';
+                clearGallery();
                 searchInput.value = '';
         }
 

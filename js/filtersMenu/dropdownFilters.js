@@ -11,6 +11,7 @@ const dropdownFilters = () => {
             if (!menuIsOpen) return;
             
             menuIsOpen.classList.toggle('filters__category-list--is-open');
+            
             for (let menu of allMenuList) {
                 if (menu !== menuIsOpen) menu.classList.add('filters__category-list--is-open');
             }

@@ -12,6 +12,7 @@ const galleryData = async (searchDataContainer) => {
         order,
         size
     } = searchDataContainer;
+
     const searchData = `${API}${numberOfPages}${searchQ}${type}${orientation}${category}${colors.join('')}${order}${size.join('')}`;
 
     try {

@@ -1,6 +1,7 @@
-import searchDataContainer from './../searchDataContainer';
 import galleryFiltersUpdate from './galleryFiltersUpdate';
 import sizeFiltersSearch from './sizeFiltersSearch';
+import searchDataContainer from './../searchDataContainer';
+import filterClassActive from './filterClassActive';
 
 const filtersValue = () => {
     const filtersCategoryList = document.querySelectorAll('.filters__category-list');
@@ -8,6 +9,9 @@ const filtersValue = () => {
 
     filtersCategoryList.forEach(listVal => {
         const selectFilter = (e) => {
+            const filter = e.target;
+            const activeFilters = e.target.parentNode.querySelector('.filters__category-list-item--color-is-checked');
+            
             const filterCategory = e.target.parentNode.dataset.filtersListValue;
             const filterValue = e.target.dataset.filterValue;
             const closeMenu = e.target.parentNode;
@@ -17,17 +21,20 @@ const filtersValue = () => {
             const categoryVal = `&category=${filterValue}`;
             const colorsVal = `&colors=${filterValue}`;
             const orderVal = `&order=${filterValue === `editor's choice` ? 'ec' : filterValue}`;
-           
+
             switch (filterCategory) {
                 case 'type':
+                    filterClassActive(filter, activeFilters);
                     searchDataContainer.type = typeVal;
-                    galleryFiltersUpdate(closeMenu);
+                    galleryFiltersUpdate(closeMenu, filterValue);
                     break;
                 case 'orientation':
+                    filterClassActive(filter, activeFilters);
                     searchDataContainer.orientation = orientationVal;
                     galleryFiltersUpdate(closeMenu);
                     break;
                 case 'category':
+                    filterClassActive(filter, activeFilters);
                     searchDataContainer.category = categoryVal;
                     galleryFiltersUpdate(closeMenu);
                     break;
@@ -35,23 +42,30 @@ const filtersValue = () => {
                     const indexValue = searchDataContainer.colors.indexOf(colorsVal);
                     const colorsArr = searchDataContainer.colors;
 
-                    if (filterValue === 'all') {
-                        colorsArr = [];
-                    }
                     if (indexValue === -1) {
-                        colorsArr.push(colorsVal)
+                        const color = colorsVal === '&colors=confirmColor' ? '' : colorsVal;
+                        if (color) {
+                            colorsArr.push(colorsVal);
+                            if (filterValue !== 'confirmColor') {
+                                e.target.classList.add('filters__category-list-item--color-is-checked')
+                            }
+                        }
                     } else {
                         colorsArr.splice(indexValue, 1)
+                        e.target.classList.remove('filters__category-list-item--color-is-checked')
                     }
-                    galleryFiltersUpdate(closeMenu);
+
+                    if (filterValue === 'confirmColor') {
+                        galleryFiltersUpdate(closeMenu);
+                    }
                     break;
                 case 'order':
+                    filterClassActive(filter, activeFilters);
                     searchDataContainer.order = orderVal;
                     galleryFiltersUpdate(closeMenu);
                     break;
             }
         }
-
         listVal.addEventListener('click', selectFilter);
     })
 }

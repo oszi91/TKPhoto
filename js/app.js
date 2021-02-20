@@ -9,5 +9,3 @@ document.addEventListener('DOMContentLoaded', filtersListHTML);
 galleryData(searchDataContainer);
 searchPhoto();
 loadMore();
-
-

@@ -1,4 +1,4 @@
-import searchDataContainer from './../searchDataContainer';
+import searchDataContainer from '../searchDataContainer';
 import galleryFiltersUpdate from './galleryFiltersUpdate';
 
 const sizeFiltersSearch = () => {

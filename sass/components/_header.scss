@@ -63,6 +63,10 @@
         &-item {
             font-size: 1.2rem;
             padding: 7px 15px;
+
+            &--color-is-checked{
+                background-color: black;
+            }
         }
     }
 }

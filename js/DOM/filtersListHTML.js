@@ -1,6 +1,6 @@
 import filtersData from './filtersData';
-import dropdownFilters from './dropdownFilters';
-import filtersValue from './filtersValue';
+import dropdownFilters from '../filtersMenu/dropdownFilters';
+import filtersValue from '../filtersMenu/filtersValue';
 
 const filtersListHTML = () => {
     const filtersListContainer = document.querySelector('.filters__list');
@@ -39,6 +39,10 @@ const filtersListHTML = () => {
                     </form> 
                     `
         };
+
+        if(category === 'Color'){
+            filtersCategoryList.innerHTML += `<button class="filters__category-list-confirm" data-filter-value="confirmColor">Confirm</button>`
+        }
 
         filtersListContainer.appendChild(filtersListItem);
     }

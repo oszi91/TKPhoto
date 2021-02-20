@@ -1,12 +1,15 @@
+import hideActiveFilters from './activeFilters/hideActiveFilters';
 import notFound from './notFound';
 
 const showGalleryResults = (results) => {
+    hideActiveFilters();
+
     const galleryContainer = document.querySelector('.gallery');
     const loadMoreBtn = document.querySelector('.load-more__btn');
     const footer = document.querySelector('.footer');
 
     if (results.length === 0) {
-        notFound(galleryContainer,loadMoreBtn,footer);
+        notFound(galleryContainer, loadMoreBtn, footer);
     } else if (results.length < 20) {
         loadMoreBtn.classList.add('hide');
     } else if (galleryContainer.classList.contains('gallery--change-display')) {
