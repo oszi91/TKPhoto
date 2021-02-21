@@ -13,14 +13,14 @@
         <div class="wrapper">
             <div class="header__container">
                 <section class="logo">
-                    TKPhoto
+                    <a class="logo__link" href="/">TKPhoto</a>
                 </section>
                 <section class="search">
-                    <div class="search__icon">
-                        <i class="fas fa-search"></i>
-                    </div>
                     <form class="search-form">
                         <input class="search-form__input" type="text" maxlength="99">
+                        <button class="search__icon">
+                                <i class="fas fa-search"></i>
+                        </button>
                     </form>
                 </section>
                 <section class="filters">
@@ -29,14 +29,18 @@
                 </section>
             </div>
         </div>
-        <section class="active-filters-section active-filters-section--is-open">
+        <section class="active-filters-section">
             <div class="wrapper">
                 <div class="active-filters">
-                    <p class="active-filters__name">Active Filters</p>
+                    <p class="active-filters__name">
+                        <span class="active-filters__name--hits"></span> results for <span class="active-filters__name--fraze">'All'</span></p>
                     <ul class="active-filters__list">
                     </ul>
                 </div>
         </section>
+        <nav class="hamburger">
+            <span class="hamburger__line"></span>
+        </nav>
     </header>
     <div class="wrapper">
 

@@ -26,22 +26,22 @@ const filtersListHTML = () => {
             filtersCategoryListItem.dataset.filterValue = item;
             filtersCategoryListItem.textContent = item.charAt(0).toUpperCase() + item.slice(1);
             filtersCategoryList.appendChild(filtersCategoryListItem);
-        })
+        });
 
         if(category === 'Size'){
             filtersCategoryList.innerHTML = `
                     <form class="filters-form">
-                        <label>Width</label>
+                        <label>W</label>
                         <input class="filters-form__width" type="number"></input>
-                        <label>Height</label> 
+                        <label>H</label> 
                         <input class="filters-form__height" type="number"></input>
-                        <button class="filters__category-list-size">Confirm</button>
+                        <button class="filters-form__confirm">Ok</button>
                     </form> 
                     `
         };
 
         if(category === 'Color'){
-            filtersCategoryList.innerHTML += `<button class="filters__category-list-confirm" data-filter-value="confirmColor">Confirm</button>`
+            filtersCategoryList.innerHTML = `<button class="filters__category-list--colors-confirm" data-filter-value="confirmColor">Confirm</button>` + filtersCategoryList.innerHTML;
         }
 
         filtersListContainer.appendChild(filtersListItem);

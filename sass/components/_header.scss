@@ -6,30 +6,82 @@
     background: $header-bcg;
     font-size: 1.5rem;
     box-shadow: $box-shadow;
+    transition: 0.5s ease;
 
     &__container {
         display: flex;
         justify-content: space-between;
         align-items: center;
         min-height: 70px;
+        
+    @include phone{
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    }
+}
+
+
+.hamburger{
+    display: none;
+
+    @include phone{
+        display: block;
+        width: 35px;
+        position: absolute;
+        top: 30px;
+        right: 15px;
+        @include hamburger;
     }
 }
 
 .logo {
     font-family: $logo-font;
     font-size: 2.2rem;
+    transition: 0.2s;
+
+    @include phone{
+        align-self: flex-start;
+        margin: 30px 0;
+    }
+    &:hover{
+        transform: scale(1.1);
+    }
 }
 
 .search {
     position: relative;
 
+    @include phone{
+        display: flex;
+        justify-content: center;
+        &-form{
+            &__input{
+                width: 100%;
+            }
+        }
+    }
+
     &__icon {
-        font-weight: 300;
-        color: rgba(177, 177, 177, 0.3);
         position: absolute;
         top: 50%;
-        right: 3%;
+        right: 0;
+        padding: 0;
+        padding-right: 3%;
+        height: 100%;
+        display: block;
+        background-color: white;
+        font-weight: 300;
+        color: rgba(177, 177, 177, 0.3);
         transform: translateY(-50%);
+
+        &:hover{
+            color:#f9d101;
+            background-color: white;
+        }
     }
 }
 
@@ -37,35 +89,123 @@
     position: relative;
     width: 55%;
 
+    @include phone{
+        margin-top: 20px;
+    }
+
     &__list {
         display: flex;
         justify-content: space-between;
+
+        [data-filters-list-value="category"]{
+            max-height: 60vh;
+            overflow-y: scroll;
+        }
+
+        @include phone{
+            align-items: center;
+            flex-direction: column;
+
+            [data-filters-list-value="category"], [data-filters-list-value="color"]{
+                max-height: 200px;
+                overflow-y: scroll;
+            }
+        }
     }
 
     &__list-item {
         cursor: pointer;
+        transition: 0.2s;
+
+        @include phone{
+            font-size: 1.7rem;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        &:hover{
+            color: rgb(238, 238, 38);
+        }
     }
 
     &__category-list {
         position: absolute;
         top: calc(100% + 10px);
         min-width: 110px;
-        background-color: rgb(207, 196, 44);
+        background: #cace04;
+        border-radius: 10px;
+        overflow: hidden;
 
-        &--size{
-            cursor: auto;
+        @include phone{
+            z-index: 5;
+            position: relative;
+            min-width: 150px;
+            margin-top: 10px;
+        }
+
+        &--colors-confirm{
+            border-radius: 0;
+            background: #4c3a84;
+            width: 100%;
+            font-size: 1rem;
+
+            @include phone{
+                top: 0;
+                position: sticky;
+            }
+
+            &:hover{
+                background:lighten($color: #4c3a84, $amount: 10%);
+            }
         }
 
         &--is-open {
             display: none;
+            transform: rotate(180deg);
         }
 
         &-item {
             font-size: 1.2rem;
             padding: 7px 15px;
+            color: white;
+
+            @include phone{
+                font-size: 1.5rem;
+            }
+
+            &:hover{
+                background-color: rgb(233, 233, 30);
+            }
 
             &--color-is-checked{
-                background-color: black;
+                background-color: rgb(233, 233, 30);
+            }
+        }
+    }
+}
+
+
+
+.filters__category-list--size{
+    cursor: auto;
+
+    .filters-form{
+        display: flex;
+        align-items: center;
+        min-height: 70px;
+        padding: 0 7px;
+        color: white;
+        &__width, &__height{
+            width: 70px;
+            margin: 0 7px;
+        }
+        
+        &__confirm{
+            background: #4c3a84;
+            transition: 0.2s;
+            margin: 0 10px;
+            &:hover{
+                background:lighten($color: #4c3a84, $amount: 10%);
             }
         }
     }

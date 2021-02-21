@@ -23,7 +23,8 @@ const activeFiltersUpdate = () => {
 
         if (filterVal && !Array.isArray(filterVal) && cutName(filterVal) !== 'all' && filterName !== 'searchQ' && filterName !== 'numberOfPages') {
             addFilterToList(cutName(filterVal));
-        } else if (Array.isArray(filterVal) && filterVal.length) {
+        }
+        else if (Array.isArray(filterVal) && filterVal.length) {
             if (filterName === 'size') {
                 const [width, height] = [...filterVal];
                 const size = `Larger than: ${cutName(width)}x${cutName(height)}px`;

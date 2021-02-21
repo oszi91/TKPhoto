@@ -1,7 +1,9 @@
 import API from './API';
+import imageHoverData from './generalFunctions/imageHoverData';
 import showGalleryResults from './showGalleryResults';
 
 const galleryData = async (searchDataContainer) => {
+    // document.querySelector('.active-filters-section').style.display = 'block';
     const {
         searchQ,
         numberOfPages,
@@ -12,16 +14,17 @@ const galleryData = async (searchDataContainer) => {
         order,
         size
     } = searchDataContainer;
-
+    
     const searchData = `${API}${numberOfPages}${searchQ}${type}${orientation}${category}${colors.join('')}${order}${size.join('')}`;
 
     try {
         const resp = await fetch(searchData);
-        console.log(resp);
         if (resp.ok) {
             const data = await resp.json();
             const gallery = data.hits;
-            showGalleryResults(gallery);
+            console.log(data);
+            showGalleryResults(data);
+            imageHoverData();
         } else {
             throw new Error(`Http error: ${resp.status}`);
         }

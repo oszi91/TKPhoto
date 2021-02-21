@@ -1,22 +1,30 @@
+$phone-max-width: 767px;
+$tablet-max-width: 1024px;
+
+@mixin phone {
+  @media (max-width: $phone-max-width) {
+    @content;
+  }
+}
+
 @mixin tablet {
-  @media (min-width: 768px) {
+  @media (min-width: #{$phone-max-width + 1}) and (max-width: $tablet-max-width) {
     @content;
   }
 }
 
-@mixin desktop {
-  @media (min-width: 992px) {
-    @content;
-  }
-}
-
-@mixin hamburger-icon {
+@mixin hamburger {
   &::before, &__line, &::after {
     content: '';
     background-color: white;
     display: block;
-    height: 4px;
+    height: 6px;
     margin: 4px 0;
     transition: all .2s ease-in-out;
   }
+  &::before{
+    content: '';
+    border-radius: 5px 5px 0 0;
+  }
+  
 }

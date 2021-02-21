@@ -25,6 +25,14 @@ body {
 .wrapper {
     margin: 0 auto;
     max-width: 1200px;
+
+    @include phone {
+        margin: 0 10px;
+    }
+
+    @include tablet{
+        margin: 0 15px;
+    }
 }
 
 a {
@@ -46,7 +54,7 @@ input {
     padding: 7px;
 }
 
-button{
+button {
     border: none;
     background-color: $btn-color;
     color: $main-font-color;
@@ -54,16 +62,17 @@ button{
     border-radius: 7px;
     font-size: 1.3rem;
     transition: 0.2s;
-    &:hover{
+
+    &:hover {
         background-color: lighten($color: $btn-color, $amount: 10%);
     }
 }
 
-.fas{
+.fas {
     pointer-events: none;
 }
 
-.hide{
+.hide {
     display: none;
 }
 

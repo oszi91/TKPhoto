@@ -1,6 +1,7 @@
 import galleryData from '../galleryData';
 import clearGallery from '../clearGallery';
 import searchDataContainer from '../searchDataContainer';
+import scrollToTop from '../generalFunctions/scrollToTop';
 
 const activeFiltersDelete = () => {
     const activeFilters = document.querySelectorAll('.active-filters__list-item');
@@ -28,7 +29,7 @@ const activeFiltersDelete = () => {
             } else {
                 searchDataContainer[filterType] = '';
             };
-
+            scrollToTop();
             galleryData(searchDataContainer);
         })
     })

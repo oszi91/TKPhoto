@@ -1,33 +1,66 @@
-.active-filters-section{
-    background-color: white;
-    &--is-open{
-        display: none;
+.active-filters-section {
+    @include phone {
+        position: absolute;
+        bottom: 50px;
+        width: 100%;
+        text-align: center;
+        background-color: inherit;
     }
+
+    background-color: white;
+    font-size: 1.3rem;
 }
 
-.active-filters{
+.active-filters {
     display: flex;
     align-items: center;
     color: black;
 
-    &__name{
-        font-size: 1.5rem;
-        margin-right: 20px;
+    @include phone {
+        flex-wrap: wrap;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
     }
 
-    &__list{
+    &__name {
+        margin: 10px 20px 10px 0;
+
+        @include phone {
+            width: 100%;
+        }
+
+        &--hits,
+        &--fraze {
+            font-weight: 600;
+        }
+    }
+
+    &__list {
         display: flex;
 
-        &-item{
+        @include phone {
+            flex-wrap: wrap;
+            background: white;
+            justify-content: center;
+        }
+
+        &-item {
             display: flex;
             margin: 5px;
             border: 1px solid black;
-            padding: 10px;
+            padding: 5px;
             cursor: pointer;
-            &-name{
+            transition: 0.2s;
+
+            &:hover {
+                opacity: 0.5;
+            }
+
+            &-name {
                 margin-right: 5px;
             }
         }
     }
-   
+
 }

@@ -16,12 +16,23 @@
     }
 
     .about-me {
+
+        @include phone{
+            width: 80%;
+        }
+
+        
         &__contact {
             color: $main-font-color;
             font-size: 2.5rem;
             border-bottom: 1px solid $main-font-color;
             margin-bottom: 15px;
             text-transform: uppercase;
+
+            @include phone{
+                font-size: 2rem;
+                width: 70%;
+            }
         }
 
         &__data {
@@ -30,6 +41,10 @@
             &__link {
                 font-size: 1.2rem;
                 transition: .2s;
+                @include phone{
+                    width: 60%;
+                    font-size: 1rem;
+                }
 
                 &:hover {
                     color: darken($color: $main-font-color, $amount: 8%);
@@ -50,6 +65,10 @@
         &__text {
             font-size: 1.5rem;
             margin-bottom: 15px;
+            @include phone{
+                font-size: 1rem;
+                text-align: center;
+            }
         }
 
         &__link {
@@ -61,6 +80,9 @@
             margin: 0 auto;
             transition: .2s;
 
+            @include phone{
+                width: 100px;
+            }
             &:hover {
                 background-color: darken($color: white, $amount: 3%)
             }
