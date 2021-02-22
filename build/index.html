@@ -1,11 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TKPhoto App</title>
 <link href="./css/style.css" rel="stylesheet"></head>
+
 <body>
+    <header class="header">
+        <div class="wrapper">
+            <div class="header__container">
+                <section class="logo">
+                    <a class="logo__link" href="/">TKPhoto</a>
+                </section>
+                <section class="search">
+                    <form class="search-form">
+                        <input class="search-form__input" type="text" maxlength="99">
+                        <button class="search__icon">
+                                <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </section>
+                <section class="filters">
+                    <ul class="filters__list">
+                    </ul>
+                </section>
+            </div>
+        </div>
+        <section class="active-filters-section">
+        
+            <div class="wrapper">
+                <div class="active-filters">
+                    <p class="active-filters__name">
+                        <span class="active-filters__name--hits"></span> results for <span class="active-filters__name--fraze">'All'</span></p>
+                    <ul class="active-filters__list">
+                    </ul>
+                </div>
+        </section>
+        <nav class="mobile-nav">
+            <div class="mobile-nav__filters">
+                <i class="fas fa-cogs"></i>
+            </div>
+            <div class="mobile-nav__hamburger">
+                <span class="mobile-nav__hamburger__line"></span>
+            </div>
+        </nav>
+    </header>
+    <div class="wrapper">
+
+    </div>
+    <main class="gallery">
+    </main>
+    <section class="load-more">
+        <button class="load-more__btn">Load More</button>
+    </section>
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="footer__container">
+                <div class="about-me">
+                    <p class="about-me__contact">Contact</p>
+                    <ul class="about-me-list">
+                        <li class="about-me__data">
+                            <a class="about-me__data__link" href="https://github.com/oszi91" target="_blank">
+                                <i class="fab fa-github"></i>
+                                Oszi91
+                            </a>
+                        </li>
+                        <li class="about-me__data">
+                            <a class="about-me__data__link" href="mailto:oszywapawel@gmail.com">
+                                <i class="fas fa-envelope"></i>
+                                oszywapawel@gmail.com
+                            </a>
+                        </li>
+                        <li class="about-me__data">
+                            <a class="about-me__data__link" href="https://www.linkedin.com/in/pawel-oszywa"
+                                target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                                PawelOszywa
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pixabay">
+                    <p class="pixabay__text">All data comes from</p>
+                    <a class="pixabay__link" href="https://pixabay.com" target="_blank">
+                        <img class="pixabay__logo" src="https://pixabay.com/static/img/logo.svg">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 <script type="text/javascript" src="js/out.js"></script></body>
+
 </html>

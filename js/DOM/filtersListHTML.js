@@ -28,6 +28,8 @@ const filtersListHTML = () => {
             filtersCategoryList.appendChild(filtersCategoryListItem);
         });
 
+        
+
         if(category === 'Size'){
             filtersCategoryList.innerHTML = `
                     <form class="filters-form">

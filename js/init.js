@@ -5,6 +5,7 @@ import loadMore from './loadMore';
 import searchDataContainer from './searchDataContainer';
 import filtersListHTML from './DOM/FiltersListHTML';
 import hideShowHeader from './generalFunctions/hideShowHeader';
+import menuToggle from './mobile/menuToggle';
 
 const init = () => {
     document.addEventListener('DOMContentLoaded', filtersListHTML);
@@ -13,6 +14,7 @@ const init = () => {
     loadMore();
     hideShowHeader();
     // document.querySelector('.active-filters-section').style.display = 'none';
+    menuToggle();
 };
 
 export default init;

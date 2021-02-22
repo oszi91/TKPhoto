@@ -14,17 +14,47 @@ $tablet-max-width: 1024px;
 }
 
 @mixin hamburger {
-  &::before, &__line, &::after {
+
+  &::before,
+  span,
+  &::after {
     content: '';
     background-color: white;
     display: block;
     height: 6px;
     margin: 4px 0;
-    transition: all .2s ease-in-out;
+    transition: .3s ease-in-out;
   }
-  &::before{
+
+  &::before {
     content: '';
     border-radius: 5px 5px 0 0;
   }
-  
+
+}
+
+@mixin hamburgerActive {
+
+  &::before,
+  span,
+  &::after {
+    content: '';
+    background-color: #f9d101;
+  }
+
+  span {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+
+  &::before {
+    content: '';
+    opacity: 1;
+    transform: rotate(-60deg) translate(-9px, 6px);
+  }
+
+  &::after {
+    content: '';
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
 }
