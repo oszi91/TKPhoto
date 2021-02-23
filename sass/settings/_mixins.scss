@@ -8,7 +8,7 @@ $tablet-max-width: 1024px;
 }
 
 @mixin tablet {
-  @media (min-width: #{$phone-max-width + 1}) and (max-width: $tablet-max-width) {
+  @media (min-width: #{$phone-max-width + 1}) and (max-width: $tablet-max-width - 1) {
     @content;
   }
 }
@@ -19,9 +19,7 @@ $tablet-max-width: 1024px;
   }
 }
 
-
 @mixin hamburger {
-
   &::before,
   span,
   &::after {
@@ -37,11 +35,9 @@ $tablet-max-width: 1024px;
     content: '';
     border-radius: 5px 5px 0 0;
   }
-
 }
 
 @mixin hamburgerActive {
-
   &::before,
   span,
   &::after {

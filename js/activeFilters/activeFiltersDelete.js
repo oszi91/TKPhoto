@@ -1,8 +1,8 @@
-import galleryData from '../galleryData';
-import clearGallery from '../clearGallery';
-import searchDataContainer from '../searchDataContainer';
+import galleryData from '../API/galleryData';
+import searchDataContainer from '../searchDataContainer/searchDataContainer';
 import scrollToTop from '../generalFunctions/scrollToTop';
 import activeFiltersNumber from '../mobile/activeFiltersNumber';
+import clearGallery from './../generalFunctions/gallery/clearGallery';
 
 const activeFiltersDelete = () => {
     const activeFilters = document.querySelectorAll('.active-filters__list-item');
@@ -33,8 +33,8 @@ const activeFiltersDelete = () => {
             };
             scrollToTop();
             galleryData(searchDataContainer);
-        })
-    })
-}
+        });
+    });
+};
 
 export default activeFiltersDelete;

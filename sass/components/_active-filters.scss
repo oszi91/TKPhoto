@@ -1,39 +1,26 @@
 .active-filters-section {
+    background-color: $main-color;
+    font-size: 1.3rem;
+
     @include phone {
         width: 100%;
         text-align: center;
         display: none;
     }
-
-    &--close-btn{
-        display: none;
-
-        @include phone{
-            display: inline;
-            margin-bottom: 50px;
-            font-size: 2rem;
-            background-color:#f9d101;
-        }   
-    }
-
-    background-color: white;
-    font-size: 1.3rem;
 }
 
 .active-filters {
     display: flex;
     align-items: center;
-    color: black;
+    color: $active-filters-color;
 
     @include phone {
         flex-wrap: wrap;
-        background-color: white;
+        background-color: $main-color;
         border-radius: 10px;
         overflow: hidden;
         padding: 5px;
     }
-
-    
 
     &__name {
         margin: 10px 20px 10px 0;
@@ -53,14 +40,14 @@
 
         @include phone {
             flex-wrap: wrap;
-            background: white;
+            background: $main-color;
             justify-content: center;
         }
 
         &-item {
             display: flex;
             margin: 5px;
-            border: 1px solid black;
+            border: 1px solid $active-filters-color;
             padding: 5px;
             cursor: pointer;
             transition: 0.2s;

@@ -1,7 +1,7 @@
-import galleryData from './galleryData';
-import searchValuesArr from './searchDataContainer';
-import clearGallery from './clearGallery';
-import scrollToTop from './generalFunctions/scrollToTop';
+import galleryData from '../API/galleryData';
+import searchValuesArr from '../searchDataContainer/searchDataContainer';
+import scrollToTop from '../generalFunctions/scrollToTop';
+import clearGallery from './../generalFunctions/gallery/clearGallery';
 
 const searchPhoto = () => {
         const form = document.querySelector('.search-form');
@@ -20,10 +20,10 @@ const searchPhoto = () => {
                 clearGallery();
                 searchInput.value = '';
                 scrollToTop();
-        }
+        };
 
         form.addEventListener('submit', searchHandle);
         searchValuesArr.searchQ = '';   
-}
+};
 
 export default searchPhoto;

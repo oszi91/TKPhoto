@@ -3,7 +3,15 @@
 @import './settings/fonts';
 @import './settings/mixins';
 @import './settings/base';
-@import './components/header';
+@import './components/header/main-header';
+@import './components/header/logo';
+@import './components/header/mobileNav/mobile-nav';
+@import './components/header/search';
+@import './components/header/filters/filtersListMenu/filters-list';
+@import './components/header/filters/filtersListMenu/filters-list-item';
+@import './components/header/filters/filtersListCategory/filters-category-list';
+@import './components/header/filters/filtersListCategory/filters-category-list-item';
+@import './components/header/filters/filtersListCategory/filters-size-form';
 @import './components/active-filters';
 @import './components/gallery';
 @import './components/footer';

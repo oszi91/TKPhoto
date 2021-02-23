@@ -16,19 +16,21 @@ const filtersListHTML = () => {
             filtersCategoryList.classList.add('filters__category-list', 'filters__category-list--size', 'filters__category-list--is-open');
         } else {
             filtersCategoryList.classList.add('filters__category-list', 'filters__category-list--is-open');
-        }
+        };
         filtersCategoryList.dataset.filtersListValue = category.charAt(0).toLowerCase() + category.slice(1);
         filtersListItem.appendChild(filtersCategoryList);
 
         filtersData[category].forEach(item => {
             const filtersCategoryListItem = document.createElement('li');
-            filtersCategoryListItem.classList.add('filters__category-list-item');
+            if(item === 'all'){
+                filtersCategoryListItem.classList.add('filters__category-list-item', 'filters__category-list-item--color-is-checked');
+            } else{
+                filtersCategoryListItem.classList.add('filters__category-list-item');
+            }
             filtersCategoryListItem.dataset.filterValue = item;
             filtersCategoryListItem.textContent = item.charAt(0).toUpperCase() + item.slice(1);
             filtersCategoryList.appendChild(filtersCategoryListItem);
         });
-
-        
 
         if(category === 'Size'){
             filtersCategoryList.innerHTML = `
@@ -44,10 +46,10 @@ const filtersListHTML = () => {
 
         if(category === 'Color'){
             filtersCategoryList.innerHTML = `<button class="filters__category-list--colors-confirm" data-filter-value="confirmColor">Ok</button>` + filtersCategoryList.innerHTML;
-        }
+        };
 
         filtersListContainer.appendChild(filtersListItem);
-    }
+    };
     dropdownFilters();
     filtersValue();
 };

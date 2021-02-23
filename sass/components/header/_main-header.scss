@@ -1,0 +1,49 @@
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    background: $header-bcg;
+    font-size: 1.5rem;
+    box-shadow: $box-shadow;
+    transition: 0.5s ease;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 70px;
+
+        @include phone {
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            height: auto;
+        }
+    }
+}
+
+@include phone {
+    .mobile-header--height {
+        height: 100vh;
+    }
+}
+
+.filters {
+    position: relative;
+    width: 55%;
+
+    @include phone {
+
+        margin-top: 20px;
+        display: none;
+    }
+}
+
+.mobile-is-open--filters {
+    display: block;
+}
+
+.mobile-is-open--search-and-filters {
+    display: flex;
+}

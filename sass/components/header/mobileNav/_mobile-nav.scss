@@ -1,0 +1,43 @@
+.mobile-nav {
+    display: none;
+
+    @include phone {
+        position: absolute;
+        top: 30px;
+        right: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__filters {
+            cursor: pointer;
+            margin-right: 15px;
+            font-size: 1.7rem;
+            transition: .2s;
+
+            &--number {
+                position: absolute;
+                bottom: 20px;
+                font-size: 1rem;
+                left: -10px;
+            }
+
+            &--is-active {
+                color: $general-hover;
+            }
+        }
+
+        &__hamburger {
+            display: none;
+            cursor: pointer;
+            display: block;
+            width: 35px;
+            @include hamburger;
+
+            &--is-active {
+                @include hamburgerActive;
+            }
+
+        }
+    }
+}

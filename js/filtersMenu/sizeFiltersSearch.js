@@ -1,4 +1,4 @@
-import searchDataContainer from '../searchDataContainer';
+import searchDataContainer from '../searchDataContainer/searchDataContainer';
 import galleryFiltersUpdate from './galleryFiltersUpdate';
 
 const sizeFiltersSearch = () => {
@@ -21,7 +21,7 @@ const sizeFiltersSearch = () => {
         } else{
             sizeArr[0] = widthVal;
             sizeArr[1] = heightVal;
-        }
+        };
         
         galleryFiltersUpdate(closeMenu);
         widthInput.value = '';

@@ -8,7 +8,7 @@ const hideShowHeader = () => {
             header.style.top = "0";
         } else {
             if (window.innerWidth < 769) {
-                header.style.top = "-90px";
+                header.style.top = "-80px";
             } else{
                 header.style.top = "-120px";
             }

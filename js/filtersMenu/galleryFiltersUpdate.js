@@ -1,9 +1,9 @@
-import galleryData from '../galleryData';
-import searchDataContainer from '../searchDataContainer';
+import galleryData from '../API/galleryData';
+import searchDataContainer from '../searchDataContainer/searchDataContainer';
 import activeFiltersUpdate from '../activeFilters/activeFiltersUpdate';
-import clearGallery from '../clearGallery';
 import scrollToTop from '../generalFunctions/scrollToTop';
 import activeFiltersNumber from '../mobile/activeFiltersNumber';
+import clearGallery from './../generalFunctions/gallery/clearGallery';
 
 const galleryFiltersUpdate = (closeMenu) => {
     activeFiltersUpdate();
@@ -12,6 +12,6 @@ const galleryFiltersUpdate = (closeMenu) => {
     closeMenu.classList.add('filters__category-list--is-open');
     activeFiltersNumber();
     scrollToTop();
-}
+};
 
 export default galleryFiltersUpdate;

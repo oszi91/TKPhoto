@@ -15,7 +15,7 @@ const showGalleryResults = (data) => {
         galleryContainer.classList.remove('gallery--change-display');
         loadMoreBtn.classList.remove('hide');
         footer.classList.remove('footer-not-found');
-    } 
+    };
 
     results.forEach(item => {
         const galleryItemDiv = document.createElement('div');
@@ -35,14 +35,13 @@ const showGalleryResults = (data) => {
             </div>
             `
         galleryContainer.appendChild(galleryItemDiv);
-    })
+    });
 
-    if(results.length !== 0){
+    if (results.length !== 0) {
         numberOfResults.textContent = data.totalHits;
-    } else{
+    } else {
         numberOfResults.textContent = 0;
-    }
-    
-}
+    };
+};
 
 export default showGalleryResults;

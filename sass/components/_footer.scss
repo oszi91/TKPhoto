@@ -16,16 +16,14 @@
     }
 
     .about-me {
-
         @include phone{
             width: 80%;
         }
 
-        
         &__contact {
-            color: $main-font-color;
+            color: $main-color;
             font-size: 2.5rem;
-            border-bottom: 1px solid $main-font-color;
+            border-bottom: 1px solid $main-color;
             margin-bottom: 15px;
             text-transform: uppercase;
 
@@ -47,7 +45,7 @@
                 }
 
                 &:hover {
-                    color: darken($color: $main-font-color, $amount: 8%);
+                    color: darken($color: $main-color, $amount: 8%);
                 }
             }
         }
@@ -55,7 +53,7 @@
         .fas,
         .fab {
             font-size: 1rem;
-            background-color: black;
+            background-color: $active-filters-color;
             border-radius: 50%;
             padding: 5px;
         }
@@ -73,7 +71,7 @@
 
         &__link {
             display: block;
-            background-color: white;
+            background-color: $main-color;
             padding: 10px;
             border-radius: 5px;
             width: 150px;
@@ -84,7 +82,7 @@
                 width: 100px;
             }
             &:hover {
-                background-color: darken($color: white, $amount: 3%)
+                background-color: darken($color: $main-color, $amount: 3%)
             }
         }
 

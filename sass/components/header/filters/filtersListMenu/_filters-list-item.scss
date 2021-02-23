@@ -1,0 +1,26 @@
+.filters__list-item {
+    cursor: pointer;
+    transition: 0.2s;
+
+    @include phone {
+        font-size: 1.5rem;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    @include tablet{
+        font-size: 1rem;
+        margin: 0 3px;
+    }
+
+    &:hover {
+        color: $general-hover;
+    }
+
+    .fa-chevron-circle-down {
+        font-size: 1.2rem;
+        @include tablet{
+            font-size: 0.6rem;
+        }
+    }
+}

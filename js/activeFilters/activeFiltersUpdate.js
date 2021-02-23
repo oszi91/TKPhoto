@@ -1,4 +1,4 @@
-import searchDataContainer from './../searchDataContainer';
+import searchDataContainer from '../searchDataContainer/searchDataContainer';
 import activeFiltersDelete from './activeFiltersDelete';
 
 const activeFiltersUpdate = () => {
@@ -33,10 +33,9 @@ const activeFiltersUpdate = () => {
                 filterVal.forEach(color => {
                     addFilterToList(cutName(color))
                 });
-            }
+            };
         };
     };
-
     activeFiltersDelete();
 };
 

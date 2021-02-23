@@ -3,37 +3,24 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: #f0efef;
+    background: $scrollbar-bcg-color;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(101, 88, 129);
+    background: $scrollbar-color;
     transition: 0.3s;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: lighten($color: rgb(101, 88, 129), $amount: 15%);
+    background: lighten($color: $scrollbar-color, $amount: 15%);
 }
-
-@include phone{
-    *{
-        -webkit-touch-callout: none; /* iOS Safari */
-        -webkit-user-select: none; /* Safari */
-         -khtml-user-select: none; /* Konqueror HTML */
-           -moz-user-select: none; /* Old versions of Firefox */
-            -ms-user-select: none; /* Internet Explorer/Edge */
-                user-select: none; 
-                -webkit-tap-highlight-color: transparent;
-    }
-}
-
 
 body {
     min-height: 100vh;
     overflow-x: hidden;
     font-family: $main-font;
-    font-size: 16px;
-    color: $main-font-color;
+    font-size: $base-font-size;
+    color: $main-color;
 }
 
 .wrapper {
@@ -44,22 +31,18 @@ body {
         margin: 0 10px;
     }
 
-    @include tablet{
+    @include tablet {
         margin: 0 15px;
     }
 }
 
 a {
-    color: white;
+    color: $main-color;
     text-decoration: none;
 }
 
 img {
     display: block;
-}
-
-.fa-chevron-circle-down {
-    font-size: 1.2rem;
 }
 
 input {
@@ -71,7 +54,7 @@ input {
 button {
     border: none;
     background-color: $btn-color;
-    color: $main-font-color;
+    color: $main-color;
     padding: 10px 20px;
     border-radius: 7px;
     font-size: 1.3rem;

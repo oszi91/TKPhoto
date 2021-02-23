@@ -1,4 +1,4 @@
-import mobileCloseMenu from './../mobile/mobileCloseMenu';
+import closeMenuWhenClickOutside from './../generalFunctions/closeMenuWhenClickOutside';
 
 const dropdownFilters = () => {
     const allfiltersList = document.querySelectorAll('.filters__list-item');
@@ -15,15 +15,15 @@ const dropdownFilters = () => {
 
             for (let menu of allMenuList) {
                 if (menu !== menuIsOpen) menu.classList.add('filters__category-list--is-open');
-            }
+            };
 
             if (form) {
                 form.addEventListener('click', e => e.stopPropagation());
-            }
-
-           
-        })
+            };
+        });
     });
-}
+
+    closeMenuWhenClickOutside();
+};
 
 export default dropdownFilters;

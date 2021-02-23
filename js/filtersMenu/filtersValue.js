@@ -1,14 +1,14 @@
 import galleryFiltersUpdate from './galleryFiltersUpdate';
 import sizeFiltersSearch from './sizeFiltersSearch';
-import searchDataContainer from './../searchDataContainer';
+import searchDataContainer from '../searchDataContainer/searchDataContainer';
 import filterClassActive from './filterClassActive';
 
 const filtersValue = () => {
     const filtersCategoryList = document.querySelectorAll('.filters__category-list');
     sizeFiltersSearch();
 
-    filtersCategoryList.forEach((listVal, i) => {
-        const selectFilter = (e) => {
+    filtersCategoryList.forEach(listVal => {
+        const selectFilter = e => {
             const filter = e.target;
             const activeFilters = e.target.parentNode.querySelector('.filters__category-list-item--color-is-checked');
 
@@ -48,16 +48,16 @@ const filtersValue = () => {
                             colorsArr.push(colorsVal);
                             if (filterValue !== 'confirmColor') {
                                 e.target.classList.add('filters__category-list-item--color-is-checked')
-                            }
+                            };
                         }
                     } else {
                         colorsArr.splice(indexValue, 1)
                         e.target.classList.remove('filters__category-list-item--color-is-checked')
-                    }
+                    };
 
                     if (filterValue === 'confirmColor') {
                         galleryFiltersUpdate(closeMenu);
-                    }
+                    };
                     break;
                 case 'order':
                     filterClassActive(filter, activeFilters);
@@ -67,7 +67,7 @@ const filtersValue = () => {
             }
         }
         listVal.addEventListener('click', selectFilter);
-    })
-}
+    });
+};
 
 export default filtersValue;

@@ -1,0 +1,38 @@
+.filters__category-list--size {
+    cursor: auto;
+
+    .filters-form {
+        display: flex;
+        align-items: center;
+        min-height: 70px;
+        padding: 0 7px;
+        color: $main-color;
+
+        @include tablet{
+            min-height: 50px;
+        }
+
+        &__width,
+        &__height {
+            width: 70px;
+            margin: 0 7px;
+
+            @include phone {
+                font-size: 1rem;
+            }
+
+            @include tablet{
+                width: 40px;
+            }
+        }
+
+        &__confirm {
+            transition: 0.2s;
+            margin: 0 10px;
+
+            @include tablet{
+                font-size: 1rem;
+            }
+        }
+    }
+}
