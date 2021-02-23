@@ -8,10 +8,6 @@
     box-shadow: $box-shadow;
     transition: 0.5s ease;
 
-    @include phone {
-        box-shadow: 0 -3px 34px 0 #e9ec34;
-    }
-
     &__container {
         display: flex;
         justify-content: space-between;
@@ -45,15 +41,22 @@
         justify-content: center;
         align-items: center;
 
-        &__filters{
+        &__filters {
             cursor: pointer;
             margin-right: 15px;
             font-size: 1.7rem;
             transition: .2s;
 
-            &--is-active{
+            &--number {
+                position: absolute;
+                bottom: 20px;
+                font-size: 1rem;
+                left: -10px;
+            }
+
+            &--is-active {
                 color: #f9d101;
-                transform: rotate(45deg);
+                // transform: rotate(45deg);
             }
         }
 
@@ -148,6 +151,12 @@
             [data-filters-list-value="color"] {
                 max-height: 200px;
                 overflow-y: scroll;
+
+                ::-webkit-scrollbar {
+                    width: 50px;
+                }
+
+                scrollbar-color: black;
             }
         }
     }
@@ -184,9 +193,9 @@
 
         &--colors-confirm {
             border-radius: 0;
-            background: #da671b;
+            background: #27c141;
             width: 100%;
-            font-size: 1rem;
+            font-size: 1.3rem;
 
             @include phone {
                 top: 0;
@@ -208,11 +217,13 @@
             color: white;
 
             @include phone {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
             }
 
             &:hover {
-                background-color: rgb(233, 233, 30);
+                @include desktop {
+                    background-color: rgb(233, 233, 30);
+                }
             }
 
             &--color-is-checked {
@@ -242,14 +253,20 @@
         padding: 0 7px;
         color: white;
 
+
+
         &__width,
         &__height {
             width: 70px;
             margin: 0 7px;
+
+            @include phone {
+                font-size: 1rem;
+            }
         }
 
         &__confirm {
-            background: #4c3a84;
+            background: #27c141;
             transition: 0.2s;
             margin: 0 10px;
 

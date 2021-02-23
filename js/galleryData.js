@@ -1,6 +1,7 @@
 import API from './API';
 import imageHoverData from './generalFunctions/imageHoverData';
 import showGalleryResults from './showGalleryResults';
+import mobileCloseMenuAfterClick from './mobile/mobileCloseMenuAfterChoice';
 
 const galleryData = async (searchDataContainer) => {
     // document.querySelector('.active-filters-section').style.display = 'block';
@@ -25,6 +26,7 @@ const galleryData = async (searchDataContainer) => {
             console.log(data);
             showGalleryResults(data);
             imageHoverData();
+            mobileCloseMenuAfterClick();
         } else {
             throw new Error(`Http error: ${resp.status}`);
         }

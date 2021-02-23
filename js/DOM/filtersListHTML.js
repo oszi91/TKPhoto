@@ -43,7 +43,7 @@ const filtersListHTML = () => {
         };
 
         if(category === 'Color'){
-            filtersCategoryList.innerHTML = `<button class="filters__category-list--colors-confirm" data-filter-value="confirmColor">Confirm</button>` + filtersCategoryList.innerHTML;
+            filtersCategoryList.innerHTML = `<button class="filters__category-list--colors-confirm" data-filter-value="confirmColor">Ok</button>` + filtersCategoryList.innerHTML;
         }
 
         filtersListContainer.appendChild(filtersListItem);

@@ -15,10 +15,24 @@
     background: lighten($color: rgb(101, 88, 129), $amount: 15%);
 }
 
+@include phone{
+    *{
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+         -khtml-user-select: none; /* Konqueror HTML */
+           -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; 
+                -webkit-tap-highlight-color: transparent;
+    }
+}
+
+
 body {
     min-height: 100vh;
     overflow-x: hidden;
     font-family: $main-font;
+    font-size: 16px;
     color: $main-font-color;
 }
 

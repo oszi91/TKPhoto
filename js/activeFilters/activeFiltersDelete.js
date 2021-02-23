@@ -2,6 +2,7 @@ import galleryData from '../galleryData';
 import clearGallery from '../clearGallery';
 import searchDataContainer from '../searchDataContainer';
 import scrollToTop from '../generalFunctions/scrollToTop';
+import activeFiltersNumber from '../mobile/activeFiltersNumber';
 
 const activeFiltersDelete = () => {
     const activeFilters = document.querySelectorAll('.active-filters__list-item');
@@ -17,6 +18,7 @@ const activeFiltersDelete = () => {
             searchingDataVal.classList.remove('filters__category-list-item--color-is-checked');      
             filterItem.remove();
             clearGallery();
+            activeFiltersNumber();
 
             if (filterType === 'searchQ' || filterType === 'numberOfPages') {
                 return;

@@ -13,6 +13,13 @@ $tablet-max-width: 1024px;
   }
 }
 
+@mixin desktop {
+  @media (min-width: #{$tablet-max-width + 1}){
+    @content;
+  }
+}
+
+
 @mixin hamburger {
 
   &::before,

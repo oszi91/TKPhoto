@@ -7,11 +7,11 @@ const filtersValue = () => {
     const filtersCategoryList = document.querySelectorAll('.filters__category-list');
     sizeFiltersSearch();
 
-    filtersCategoryList.forEach(listVal => {
+    filtersCategoryList.forEach((listVal, i) => {
         const selectFilter = (e) => {
             const filter = e.target;
             const activeFilters = e.target.parentNode.querySelector('.filters__category-list-item--color-is-checked');
-            
+
             const filterCategory = e.target.parentNode.dataset.filtersListValue;
             const filterValue = e.target.dataset.filterValue;
             const closeMenu = e.target.parentNode;
