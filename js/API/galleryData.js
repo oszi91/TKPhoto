@@ -16,7 +16,6 @@ const galleryData = async (searchDataContainer) => {
     } = searchDataContainer;
 
     const searchData = `${API}${numberOfPages}${searchQ}${type}${orientation}${category}${colors.join('')}${order}${size.join('')}`;
-
     try {
         const resp = await fetch(searchData);
         if (resp.ok) {
@@ -24,8 +23,6 @@ const galleryData = async (searchDataContainer) => {
             showGalleryResults(data);
             imageHoverData();
             mobileCloseMenuAfterClick();
-
-        
         } else {
             throw new Error(`Http error: ${resp.status}`);
         };

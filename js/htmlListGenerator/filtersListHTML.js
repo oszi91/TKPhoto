@@ -38,7 +38,7 @@ const filtersListHTML = () => {
                         <label>W</label>
                         <input class="filters-form__width" type="number"></input>
                         <label>H</label> 
-                        <input class="filters-form__height" type="number"></input>
+                        <input class="filters-form__height" type="number"></input>px
                         <button class="filters-form__confirm">Ok</button>
                     </form> 
                     `
