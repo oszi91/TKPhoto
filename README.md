@@ -1,11 +1,11 @@
-# TKPhoto
-![](ghPreview/1.png)
+# TKPhoto - Live Demo
+[TKPhoto - live preview](https://oszi91.github.io/TKPhoto/build/index.html)
 
 ## Description:
 Search for your favourite photos using multiple filters such as Order / Type / Orientation / Size / Category / Color or by manual entry. You can add new filters or delete previously selected filters. All photos comes from [Pixabay](https://pixabay.com).
 
-## Live Demo
-[TKPhoto - live preview](https://oszi91.github.io/TKPhoto/build/index.html)
+## TKPhoto - preview
+![](ghPreview/1.png)
 
 ## Technologies and additional dependencies:
 | Tool | Description |
